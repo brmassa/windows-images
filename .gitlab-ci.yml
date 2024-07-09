@@ -1,0 +1,22 @@
+image: docker:latest
+
+services:
+  - docker:dind
+
+build:
+  stage: build
+  script:
+    - |
+      docker build \
+      -t $CI_REGISTRY_IMAGE:windows-${OS_PLATFORM} .
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker push $CI_REGISTRY_IMAGE --all-tags
+  parallel:
+    matrix:
+      - OS_PLATFORM: [
+          # linux_amd64,
+          windows_amd64,
+          # android_arm64,
+          # xboxone,
+          # windows_store,
+        ]
