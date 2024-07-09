@@ -51,4 +51,4 @@ jobs:
       - name: Build image
         run: |
           docker build -t ghcr.io/${{ github.repository }}:latest .
-          docker image push --all-tags ghcr.io/${{ github.repository }}:latest
+          docker image push ghcr.io/${{ github.repository }}:latest
