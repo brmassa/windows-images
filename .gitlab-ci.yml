@@ -5,9 +5,7 @@ services:
 
 build:
   tags:
-    - shared-windows
     - windows
-    - windows-1809
   stage: build
   script:
     - |
