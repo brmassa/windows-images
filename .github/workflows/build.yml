@@ -18,7 +18,7 @@ jobs:
         with:
           image: windows-images
           registry: ghcr.io
-          username: ${{ github.actor  }}
+          username: ${{ secrets.GHCR_USERNAME }}
           password: ${{ secrets.GHCR_TOKEN }}
           platform: windows/amd64
           tags: development-latest
