@@ -16,7 +16,7 @@ jobs:
       - name: Build and Push my_awesome_microservice
         uses: mr-smithers-excellent/docker-build-push@v6
         with:
-          image: my_awesome_microservice
+          image: windows-images
           registry: ghcr.io
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
