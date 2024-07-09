@@ -4,6 +4,10 @@ services:
   - docker:dind
 
 build:
+  tags:
+    - shared-windows
+    - windows
+    - windows-1809
   stage: build
   script:
     - |
@@ -14,9 +18,9 @@ build:
   parallel:
     matrix:
       - OS_PLATFORM: [
-          # linux_amd64,
-          windows_amd64,
-          # android_arm64,
-          # xboxone,
-          # windows_store,
-        ]
+            # linux_amd64,
+            windows_amd64,
+            # android_arm64,
+            # xboxone,
+            # windows_store,
+          ]
